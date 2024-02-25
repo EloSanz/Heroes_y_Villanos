@@ -96,6 +96,13 @@ public class CompetidorTest {
     }
 
     @Test
+    public void testCaracteristicaInexistente() {
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+        assertThrows(CaracteristicaInexistenteException.class, () -> {p1.esGanador(p2, Caracteristica.OTRA, false);});
+    }
+    
+    @Test
     public void esGanadorTestVelocidad() {
         try {
             Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
