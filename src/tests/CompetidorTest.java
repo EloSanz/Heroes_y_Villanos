@@ -4,13 +4,32 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import heroesVillanos.Caracteristica;
-import heroesVillanos.Competidor;
-import heroesVillanos.Heroe;
-import heroesVillanos.Villano;
-import Excepciones.CaracteristicaInexistenteException;
+import heroesVillanos.*;
+import Excepciones.*;
 
 public class CompetidorTest {
+    @Test
+    public void testEsHeroe() {
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+        assertTrue(p2.esHeroe());
+        assertFalse(p1.esHeroe());
+    }
+
+    @Test
+    public void testEsVillano() {
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+        assertTrue(p1.esVillano());
+        assertFalse(p2.esVillano());
+    }
+
+    @Test
+    public void testEsLiga() {
+        Competidor l1 = new Liga("Testing");
+        assertTrue(l1.getEsLiga());
+    }
+
     @Test
     public void esGanadorTestVelocidad() {
         try {
