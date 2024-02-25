@@ -94,6 +94,53 @@ public class CompetidorTest {
             e.printStackTrace();
         }
     }
+    
+    @Test
+    public void testEstaPresenteEnLiga() {
+        Competidor p = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        Liga liga1 = new Liga("Liga 1");
+
+        liga1.agregarMiembro(p);
+
+        assertTrue(liga1.contieneA(p));
+    }
+
+    @Test
+    public void testEsLigaHomogenea() {
+        Liga liga1 = new Liga("Liga 1"); // HOMOGENEA
+
+        Competidor p1 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p2 = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+
+        assertTrue(liga1.esHomogenea());
+    }
+
+    @Test
+    public void testLigaDejaDeSerHomogenea() {
+        Liga liga1 = new Liga("Liga 1"); // HOMOGENEA
+
+        Competidor p1 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p2 = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+
+        assertTrue(liga1.esHomogenea());
+
+        Liga liga2 = new Liga("Subliga");
+
+        Competidor p3 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        
+        liga2.agregarMiembro(p3);
+        
+        liga1.agregarMiembro(liga2);
+
+        assertFalse(liga1.esHomogenea());
+    }
 
     @Test
     public void testCaracteristicaInexistente() {

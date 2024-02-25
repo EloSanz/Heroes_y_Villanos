@@ -77,7 +77,7 @@ public class Archivo {
                             }
                             if (competidor.getEsLiga()) {
                                 Liga subliga = (Liga) competidor;
-                                if (!subliga.esHomogenea())
+                                if (!subliga.esHomogenea()) // || subliga.esHeroe() != liga.esHeroe()
                                     liga.setEsHomogenea(false);
 
                                 liga.agregarMiembro(competidor);
