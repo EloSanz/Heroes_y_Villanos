@@ -18,23 +18,13 @@ public class InterfazDeUsuario {
 
         CompetidoresSingleton competidoresSingleton = CompetidoresSingleton.getInstance();
         Map<String, Competidor> competidores = competidoresSingleton.getCompetidores();
+ 
+        /*
         Archivo archivo = new Archivo("personajes.in");
         archivo.cargarPersonajes(competidores);
         archivo.cargarLigas("ligas.in", competidores);
+        */
         System.out.println("Heroes y Villanos: El Videojuego.\n--------------------------------");
-        
-        // para tener todo en memoria.
-        /*
-         * for (Competidor competidor : competidores.values()) {
-         * if (competidor.getNombre().equals("Los Veloces")) {
-         * Liga liga = (Liga) competidor;
-         * mostrarCompetidor(competidor);
-         * System.out.println(competidor.getCaracteristica(Caracteristica.VELOCIDAD));
-         * System.out.println(liga.esHomogenea());
-         * }
-         * }
-         */
-
         String mensaje = "1) Administracion de Personajes.\n" +
                         "2) Administracion de Ligas.\n" +
                         "3) Realizacion de Combates.\n" +

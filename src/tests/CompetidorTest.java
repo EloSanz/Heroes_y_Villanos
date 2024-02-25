@@ -12,7 +12,6 @@ import Excepciones.CaracteristicaNegativaException;
 import Excepciones.CaracteristicaInexistenteException;
 
 public class CompetidorTest {
-
     @Test
     public void caracteristicaNegativaExceptionTest() throws CaracteristicaNegativaException {
 
