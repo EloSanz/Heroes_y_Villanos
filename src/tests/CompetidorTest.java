@@ -31,6 +31,71 @@ public class CompetidorTest {
     }
 
     @Test
+    public void testLigaXLiga() {
+        Liga liga1 = new Liga("Liga 1");
+        Liga liga2 = new Liga("Liga 2");
+
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+
+        Competidor p3 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p4 = new Villano("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+        liga2.agregarMiembro(p3);
+        liga2.agregarMiembro(p4);
+
+        try {
+            assertEquals(2, liga1.esGanador(liga2, Caracteristica.VELOCIDAD, false));
+        } catch (CaracteristicaInexistenteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testLigaXLigaHomogeneas() {
+        Liga liga1 = new Liga("Liga 1");
+        Liga liga2 = new Liga("Liga 2"); // HOMOGENEA
+
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+
+        Competidor p3 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p4 = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+        liga2.agregarMiembro(p3);
+        liga2.agregarMiembro(p4);
+
+        try {
+            assertEquals(2, liga1.esGanador(liga2, Caracteristica.VELOCIDAD, false));
+        } catch (CaracteristicaInexistenteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testPersonajeXLiga() {
+        Competidor p = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        Liga liga1 = new Liga("Liga 1");
+
+        Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+
+        try {
+            assertEquals(1, p.esGanador(liga1, Caracteristica.VELOCIDAD, false));
+        } catch (CaracteristicaInexistenteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void esGanadorTestVelocidad() {
         try {
             Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
@@ -84,6 +149,5 @@ public class CompetidorTest {
         } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
         }
-
     }
 }

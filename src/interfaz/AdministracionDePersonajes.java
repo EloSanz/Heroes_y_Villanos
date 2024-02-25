@@ -2,6 +2,9 @@ package interfaz;
 
 import java.util.Map;
 import java.util.Scanner;
+
+import Excepciones.ErrorEnArchivoException;
+import Excepciones.PersonajeExistenteException;
 import archivos.Archivo;
 import heroesVillanos.*;
 
@@ -24,7 +27,11 @@ public class AdministracionDePersonajes {
                     cargarDesdeArchivo(scanner, competidores);
                     break;
                 case 2:
-                    crearPersonaje(scanner, competidores);
+                    try {
+                        crearPersonaje(scanner, competidores);
+                    } catch (PersonajeExistenteException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 3:
                     InterfazDeUsuario.mostrarPersonajes(competidores);
@@ -46,13 +53,17 @@ public class AdministracionDePersonajes {
         System.out.println("Ingrese el nombre del archivo: ");
         String path = scanner.next();
         Archivo archivo = new Archivo(path);
-        if (archivo.cargarPersonajes(competidores))
+
+        try {
+            archivo.cargarPersonajes(competidores);
             System.out.println("Cargado: " + path);
-        else
+        } catch (ErrorEnArchivoException e) {
             System.out.println("Error al cargar el archivo " + path);
+            e.printStackTrace();
+        }
     }
 
-    public static void crearPersonaje(Scanner scanner, Map<String, Competidor> competidores) {
+    public static void crearPersonaje(Scanner scanner, Map<String, Competidor> competidores) throws PersonajeExistenteException {
         int tipo = 0;
         System.out.println("Creación de Personaje");
         do {
@@ -65,6 +76,9 @@ public class AdministracionDePersonajes {
 
         System.out.print("Nombre del Personaje: ");
         String nombrePersonaje = scanner.nextLine();
+        if(competidores.get(nombrePersonaje) != null) {
+            throw new PersonajeExistenteException("El personaje ya existe.");
+        }
 
         System.out.print("Velocidad: ");
         int velocidad = validarEntero(scanner);

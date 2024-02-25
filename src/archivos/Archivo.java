@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
+
+import Excepciones.ErrorEnArchivoException;
+
 import java.nio.charset.StandardCharsets; // para que lea caracteres especiales
 
 import heroesVillanos.Competidor;
@@ -20,7 +23,7 @@ public class Archivo {
         this.nombreArchivo = nombreArchivo;
     }
 
-    public boolean cargarPersonajes(Map<String, Competidor> competidores) {
+    public boolean cargarPersonajes(Map<String, Competidor> competidores) throws ErrorEnArchivoException {
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo, StandardCharsets.UTF_8))) {
             String linea;
             while ((linea = br.readLine()) != null) {
@@ -47,13 +50,10 @@ public class Archivo {
                         continue;
                     }
                     competidores.put(nombrePersonaje, competidor); // Agregar el competidor al HashMap usando el nombre como clave
-                } else {
-                    // Guardar la línea incorrecta en un archivo de errores si es necesario
-                }
+                } // no hay else ya que no se requiere validacion en los datos
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            return false;
+            throw new ErrorEnArchivoException("Error al cargar el archivo especificado.");
         }
         return true;
     }
