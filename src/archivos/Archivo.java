@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.nio.charset.StandardCharsets; // para que lea caracteres especiales
 
-import Excepciones.CaracteristicaNegativaException;
 import heroesVillanos.Competidor;
 import heroesVillanos.Heroe;
 import heroesVillanos.Liga;
@@ -34,25 +33,20 @@ public class Archivo {
                     int fuerza = Integer.parseInt(partes[4]);
                     int resistencia = Integer.parseInt(partes[5]);
                     int destreza = Integer.parseInt(partes[6]);
-                    try {
-                        Competidor competidor;
-                        if (tipo.equals("Héroe")) {
-                            competidor = new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia,
-                                    destreza);
-                        } else if (tipo.equals("Villano")) {
-                            competidor = new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia,
-                                    destreza);
-                        } else {
-                            // Manejar el caso donde el tipo no es válido (podría guardar en un archivo de
-                            // errores)
-                            continue;
-                        }
-                        competidores.put(nombrePersonaje, competidor); // Agregar el competidor al HashMap usando el
-                                                                       // nombre como clave
 
-                    } catch (CaracteristicaNegativaException e) {
-                        e.printStackTrace();
+                    Competidor competidor;
+                    if (tipo.equals("Héroe")) {
+                        competidor = new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia,
+                                destreza);
+                    } else if (tipo.equals("Villano")) {
+                        competidor = new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia,
+                                destreza);
+                    } else {
+                        // Manejar el caso donde el tipo no es válido (podría guardar en un archivo de
+                        // errores)
+                        continue;
                     }
+                    competidores.put(nombrePersonaje, competidor); // Agregar el competidor al HashMap usando el nombre como clave
                 } else {
                     // Guardar la línea incorrecta en un archivo de errores si es necesario
                 }

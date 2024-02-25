@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
-import archivos.Archivo;
+//import archivos.Archivo;
 //import heroesVillanos.Caracteristica;
 //import archivos.Archivo;
 import heroesVillanos.Competidor;
@@ -24,6 +24,7 @@ public class InterfazDeUsuario {
         archivo.cargarPersonajes(competidores);
         archivo.cargarLigas("ligas.in", competidores);
         */
+        
         System.out.println("Heroes y Villanos: El Videojuego.\n--------------------------------");
         String mensaje = "1) Administracion de Personajes.\n" +
                         "2) Administracion de Ligas.\n" +

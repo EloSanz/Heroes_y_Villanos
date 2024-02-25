@@ -48,7 +48,7 @@ public class Reportes {
 
         Competidor personaje = competidores.get(nombrePersonaje);
         if (personaje != null) {
-            int op = InterfazDeUsuario.obtenerOpcion("\"Ingrese la característica para la cual desea encontrar los personajes que vencen a " + nombrePersonaje + "\n"+
+            int op = InterfazDeUsuario.obtenerOpcion("Ingrese la característica para la cual desea encontrar los personajes que vencen a " + nombrePersonaje + "\n"+
                                                 "Velocidad: 1\n" +
                                                 "Fuerza: 2\n" +
                                                 "Destreza: 3\n" +

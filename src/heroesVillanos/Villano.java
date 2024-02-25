@@ -1,7 +1,5 @@
 package heroesVillanos;
 
-import Excepciones.CaracteristicaNegativaException;
-
 public class Villano extends Personaje {
 
 	@Override
@@ -16,8 +14,7 @@ public class Villano extends Personaje {
 				this.getCaracteristica(Caracteristica.RESISTENCIA));
 	}
 
-	public Villano(String nombreReal, String nombrePersonaje, int velocidad, int fuerza, int resistencia, int destreza)
-			throws CaracteristicaNegativaException {
+	public Villano(String nombreReal, String nombrePersonaje, int velocidad, int fuerza, int resistencia, int destreza) {
 		super(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia, destreza);
 		esLiga = false;
 	}

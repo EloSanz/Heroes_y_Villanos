@@ -1,7 +1,5 @@
 package heroesVillanos;
 
-import Excepciones.CaracteristicaNegativaException;
-
 public class Heroe extends Personaje {
 
 	@Override
@@ -20,9 +18,7 @@ public class Heroe extends Personaje {
 		System.out.println(this);
 	}
 
-	public Heroe(String nombreReal, String nombrePersonaje, double velocidad, double fuerza, double resistencia,
-			double destreza)
-			throws CaracteristicaNegativaException {
+	public Heroe(String nombreReal, String nombrePersonaje, double velocidad, double fuerza, double resistencia, double destreza) {
 		super(nombreReal, nombrePersonaje, velocidad, fuerza, resistencia, destreza);
 		esLiga = false;
 	}

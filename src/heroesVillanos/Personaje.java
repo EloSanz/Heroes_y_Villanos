@@ -4,14 +4,11 @@ package heroesVillanos;
 import java.util.HashMap;
 import java.util.Map;
 
-import Excepciones.CaracteristicaNegativaException;
-
 public abstract class Personaje extends Competidor {
     private String nombreReal;
     private Map<Caracteristica, Double> caracteristicas = new HashMap<Caracteristica, Double>();
 
-    public Personaje(String nombreReal, String nombre, double velocidad, double fuerza, double resistencia,
-        double destreza) throws CaracteristicaNegativaException {
+    public Personaje(String nombreReal, String nombre, double velocidad, double fuerza, double resistencia, double destreza)  {
         this.nombreReal = nombreReal;
         this.nombre = nombre;
         this.esLiga = false;

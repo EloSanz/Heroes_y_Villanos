@@ -18,7 +18,7 @@ public class AdministracionDeCombates {
                 "2) Combate entre ligas.\n" +
                 "3) Combate entre personaje y liga.\n";
 
-        int opcion = InterfazDeUsuario.obtenerOpcion(mensaje, 1, 3, scanner);
+        int opcion = InterfazDeUsuario.obtenerOpcion(mensaje, 1, 4, scanner);
 
         switch (opcion) {
             case 1:
@@ -29,6 +29,10 @@ public class AdministracionDeCombates {
                 break;
             case 3:
                 combateLigaXPersonaje(scanner, competidores);
+                break;
+            case 4:
+                System.out.println("Volviendo al menú principal...");
+                InterfazDeUsuario.menu();
                 break;
         }
         InterfazDeUsuario.menu();

@@ -2,7 +2,6 @@ package interfaz;
 
 import java.util.Map;
 import java.util.Scanner;
-import Excepciones.CaracteristicaNegativaException;
 import archivos.Archivo;
 import heroesVillanos.*;
 
@@ -80,19 +79,9 @@ public class AdministracionDePersonajes {
         int resistencia = validarEntero(scanner);
 
         if (tipo == 1) {
-            try {
-                competidores.put(nombrePersonaje,
-                        new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
-            } catch (CaracteristicaNegativaException e) {
-                System.out.println("Error al crear el héroe: " + e.getMessage());
-            }
+            competidores.put(nombrePersonaje, new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
         } else if (tipo == 2) {
-            try {
-                competidores.put(nombrePersonaje,
-                        new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
-            } catch (CaracteristicaNegativaException e) {
-                System.out.println("Error al crear el villano: " + e.getMessage());
-            }
+            competidores.put(nombrePersonaje, new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
         }
     }
 
