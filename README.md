@@ -1,3 +1,11 @@
+Integrantes: 
+-Sanz, Eliseo
+-Barcia, Matias
+-Arab, Santiago
+-Zamudio, Veronica
+-Aguilera, Emanuel
+
+
 Para utilizar "Heroes y Villanos: El Videojuego", siga con los siguientes pasos.
 
 Paso 1: Ejecute el programa. Verá el menu interfaz del juego.
