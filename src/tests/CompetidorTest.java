@@ -8,6 +8,7 @@ import heroesVillanos.*;
 import Excepciones.*;
 
 public class CompetidorTest {
+
     @Test
     public void testEsHeroe() {
         Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
@@ -28,6 +29,17 @@ public class CompetidorTest {
     public void testEsLiga() {
         Competidor l1 = new Liga("Testing");
         assertTrue(l1.getEsLiga());
+    }
+    @Test
+    public void testLigaConBonus() {
+        Liga l1 = new Liga("Testing");
+        Heroe p1 = new Heroe("Arthur Fleck", "El Guasón", 1,100,1,1);
+        Heroe p2 = new Heroe("Barry Allen", "Flash", 1, 100,1,1);
+        l1.agregarMiembro(p1);
+        l1.agregarMiembro(p2);
+
+       
+    assertEquals(l1.getCaracteristica(Caracteristica.FUERZA),((100 + 100)/2 ) * 1.1);
     }
 
     @Test
@@ -107,6 +119,32 @@ public class CompetidorTest {
     }
 
     @Test
+    public void testEsLigaTieneHeroe() {
+        Liga liga1 = new Liga("Liga 1"); // HOMOGENEA
+
+        Competidor p1 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p2 = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+
+        assertTrue(liga1.tieneHeroe());
+    }
+
+    @Test
+    public void testEsLigaTieneVillano() {
+        Liga liga1 = new Liga("Liga 1"); // HOMOGENEA
+
+        Competidor p1 = new Heroe("Steve Rogers", "Captain America", 300, 350, 400, 350);
+        Competidor p2 = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
+
+        liga1.agregarMiembro(p1);
+        liga1.agregarMiembro(p2);
+
+        assertFalse(liga1.tieneVillano());
+    }
+
+    @Test
     public void testEsLigaHomogenea() {
         Liga liga1 = new Liga("Liga 1"); // HOMOGENEA
 
@@ -134,8 +172,10 @@ public class CompetidorTest {
         Liga liga2 = new Liga("Subliga");
 
         Competidor p3 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
+        Competidor p4 = new Heroe("Arthur Fleck", "El Buenón", 200, 210, 220, 205);
 
         liga2.agregarMiembro(p3);
+        liga2.agregarMiembro(p4);
 
         liga1.agregarMiembro(liga2);
 

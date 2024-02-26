@@ -21,18 +21,46 @@ public class Liga extends Competidor {
     }
 
     public void agregarMiembro(Competidor miembroNuevo) {
-        competidores.put(miembroNuevo.getNombre(), miembroNuevo); // Agregar el miembro al HashMap
-        // Actualizar los indicadores de la liga
-        if (competidores.isEmpty()) {
-            esLigaDeHeroes = !miembroNuevo.esVillano();
-        } else {
-            if (esLigaDeHeroes && miembroNuevo.esVillano()) {
+        competidores.put(miembroNuevo.getNombre(), miembroNuevo); 
+        
+        if (miembroNuevo.getEsLiga()) {
+            Liga ligaNueva = (Liga) miembroNuevo; 
+            if (esLigaDeHeroes && ligaNueva.tieneVillano()) { // Si la liga principal es de heroes y la nueva liga tiene al menos un villano
                 esLigaDeHeroes = false;
                 esHomogenea = false;
-            } else if (!esLigaDeHeroes && esHomogenea && miembroNuevo.esHeroe()) {
-                esHomogenea = false;
+            } else if (!esLigaDeHeroes && esHomogenea && ligaNueva.tieneHeroe()) {  // Si la liga principal no es de heroes,
+                esHomogenea = false;                                     // pero sigue siendo homogrnea y la nueva liga tiene al menos un heroe
+                
+            }
+        } else {
+            if (competidores.isEmpty()) {
+                esLigaDeHeroes = !miembroNuevo.esVillano();
+            } else {
+                if (esLigaDeHeroes && miembroNuevo.esVillano()) {
+                    esLigaDeHeroes = false;
+                    esHomogenea = false;
+                } else if (!esLigaDeHeroes && esHomogenea && miembroNuevo.esHeroe()) {
+                    esHomogenea = false;
+                }
             }
         }
+    }
+    public boolean tieneHeroe() {
+        for (Competidor miembro : this.competidores.values()) {
+            if (miembro.esHeroe() || miembro.getEsLiga() && ((Liga)miembro).tieneHeroe() ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean tieneVillano() {
+        for (Competidor miembro : this.competidores.values()) {
+            if (miembro.esVillano() || miembro.getEsLiga() && ((Liga)miembro).tieneVillano() ) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void setNombre(String nombre) {
@@ -45,7 +73,14 @@ public class Liga extends Competidor {
         // para obtener el promedio de la característica solicitada.
         double total = calcularValorTotalCaracteristica(caracteristica);
         int cantidad = contarCompetidores();
-        return cantidad > 0 ? total / cantidad : 0;
+        if(cantidad > 0)
+        {
+            if(esHomogenea)
+                return (total/cantidad) * 1.1;
+            else
+                return total/cantidad;
+        }else
+            return 0;
     }
 
     @Override
