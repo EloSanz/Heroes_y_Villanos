@@ -29,8 +29,7 @@ public class Liga extends Competidor {
                 esLigaDeHeroes = false;
                 esHomogenea = false;
             } else if (!esLigaDeHeroes && esHomogenea && ligaNueva.tieneHeroe()) {  // Si la liga principal no es de heroes,
-                esHomogenea = false;                                     // pero sigue siendo homogrnea y la nueva liga tiene al menos un heroe
-                
+                esHomogenea = false;                                     // pero sigue siendo homogrnea y la nueva liga tiene al menos un heroe 
             }
         } else {
             if (competidores.isEmpty()) {

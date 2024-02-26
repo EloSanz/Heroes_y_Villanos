@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import Excepciones.CaracteristicaInexistenteException;
+import Excepciones.ExceptionMiembroInlcuidoEnLiga;
 
 public class Reportes {
     public static void reportes(Map<String, Competidor> competidores) {
@@ -29,7 +30,11 @@ public class Reportes {
             scanner.nextLine(); // limpio el buffer
             switch (opcion) {
                 case 1:
-                    reportePersonajesQueVencen(competidores, scanner);
+                    try {
+                        reportePersonajesQueVencen(competidores, scanner);
+                    } catch (ExceptionMiembroInlcuidoEnLiga e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 2:
                     reportePersonajesOrdenados(competidores, scanner);
@@ -42,7 +47,7 @@ public class Reportes {
         } while (opcion != 3);
     }
 
-    private static void reportePersonajesQueVencen(Map<String, Competidor> competidores, Scanner scanner) {
+    private static void reportePersonajesQueVencen(Map<String, Competidor> competidores, Scanner scanner) throws ExceptionMiembroInlcuidoEnLiga {
         System.out.println("Ingrese el nombre del personaje: ");
         String nombrePersonaje = scanner.nextLine();
 
