@@ -65,7 +65,7 @@ public class Archivo {
             while ((linea = bf.readLine()) != null) {
                 String[] partes = linea.split(", ");
                 Liga liga = new Liga(partes[0]);// el primero es el nombre de la liga en estos registros.
-                ArrayList<Personaje> personajesCargados = new ArrayList<>();
+                ArrayList<Personaje> personajesCargados = new ArrayList<>();//resuelve el problema de personajes repetidos
                 for (int i = 1; i < partes.length; i++)// cargo miembros.
                 {
                     String miembroBuscado = partes[i];

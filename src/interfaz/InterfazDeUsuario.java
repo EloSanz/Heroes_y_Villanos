@@ -36,16 +36,16 @@ public class InterfazDeUsuario {
 
         switch (opcion) {
             case 1:
-                AdministracionDePersonajes.administrador(competidores);
+                    AdministracionDePersonajes.administrador(competidores);
                 break;
             case 2:
-                AdministracionDeLigas.administrador(competidores);
+                    AdministracionDeLigas.administrador(competidores);
                 break;
             case 3:
-                AdministracionDeCombates.realizacionDeCombates(competidores);
+                    AdministracionDeCombates.realizacionDeCombates(competidores);
                 break;
             case 4:
-                Reportes.reportes(competidores);
+                    Reportes.reportes(competidores);
                 break;
             case 5:
                 System.out.println("Gracias por jugar.");

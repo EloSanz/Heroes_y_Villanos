@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 import Excepciones.CaracteristicaInexistenteException;
+import Excepciones.ExceptionMiembroInlcuidoEnLiga;
 import heroesVillanos.Caracteristica;
 import heroesVillanos.Competidor;
 import heroesVillanos.Liga;
@@ -16,19 +17,31 @@ public class AdministracionDeCombates {
 
         String mensaje = "1) Combate entre personajes.\n" +
                 "2) Combate entre ligas.\n" +
-                "3) Combate entre personaje y liga.\n";
+                "3) Combate entre Liga y Personaje.\n";
 
         int opcion = InterfazDeUsuario.obtenerOpcion(mensaje, 1, 4, scanner);
 
         switch (opcion) {
             case 1:
-                combatePersonajeXPersonaje(scanner, competidores);
+                try {
+                    combatePersonajeXPersonaje(scanner, competidores);
+                } catch (ExceptionMiembroInlcuidoEnLiga e) {
+                    e.printStackTrace();
+                }
                 break;
             case 2:
-                combateLigaXLiga(scanner, competidores);
+                try {
+                    combateLigaXLiga(scanner, competidores);
+                } catch (ExceptionMiembroInlcuidoEnLiga e) {
+                    e.printStackTrace();
+                }
                 break;
             case 3:
-                combateLigaXPersonaje(scanner, competidores);
+                try {
+                    combateLigaXPersonaje(scanner, competidores);
+                } catch (ExceptionMiembroInlcuidoEnLiga e) {
+                    e.printStackTrace();
+                }
                 break;
             case 4:
                 System.out.println("Volviendo al menú principal...");
@@ -38,7 +51,7 @@ public class AdministracionDeCombates {
         InterfazDeUsuario.menu();
     }
 
-    private static void combatePersonajeXPersonaje(Scanner scanner, Map<String, Competidor> competidores) {
+    private static void combatePersonajeXPersonaje(Scanner scanner, Map<String, Competidor> competidores) throws ExceptionMiembroInlcuidoEnLiga {
         System.out.println("Combate entre Personajes");
         Personaje personaje1, personaje2 = null;
 
@@ -105,7 +118,7 @@ public class AdministracionDeCombates {
         }
     }
 
-    private static void combateLigaXPersonaje(Scanner scanner, Map<String, Competidor> competidores) {
+    private static void combateLigaXPersonaje(Scanner scanner, Map<String, Competidor> competidores) throws ExceptionMiembroInlcuidoEnLiga {
         System.out.println("Combate entre Liga y Personaje");
         Liga liga1;
         Personaje personaje1;
@@ -174,7 +187,7 @@ public class AdministracionDeCombates {
         }
     }
 
-    private static void combateLigaXLiga(Scanner scanner, Map<String, Competidor> competidores) {
+    private static void combateLigaXLiga(Scanner scanner, Map<String, Competidor> competidores) throws ExceptionMiembroInlcuidoEnLiga {
         System.out.println("Combate entre Ligas");
         Liga liga1, liga2;
 
