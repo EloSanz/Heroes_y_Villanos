@@ -16,7 +16,8 @@ public class AdministracionDeCombates {
 
         String mensaje = "1) Combate entre personajes.\n" +
                 "2) Combate entre ligas.\n" +
-                "3) Combate entre personaje y liga.\n";
+                "3) Combate entre personaje y liga.\n" + 
+                "4) Volver al menu principal\n";
 
         int opcion = InterfazDeUsuario.obtenerOpcion(mensaje, 1, 4, scanner);
 
