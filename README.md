@@ -1,4 +1,4 @@
-##Para utilizar "Heroes y Villanos: El Videojuego", siga con los siguientes pasos.
+Para utilizar "Heroes y Villanos: El Videojuego", siga con los siguientes pasos.
 
 Paso 1: Ejecute el programa. Verá el menu interfaz del juego.
 
@@ -12,4 +12,4 @@ Paso 5: Escriba el nombre de archivo "ligas.in".
 
 Paso 6: Vuelva al menú principal, y ya puede entrar a la opción 3, "Administracion de combates", y empezar a jugar. También puede elegir la opción 4, para realizar reportes.
 
-##Disfrute del juego!
+Disfrute del juego!
