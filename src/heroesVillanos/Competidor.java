@@ -1,7 +1,6 @@
 package heroesVillanos;
 
 import Excepciones.CaracteristicaInexistenteException;
-import Excepciones.ExceptionMiembroInlcuidoEnLiga;
 
 
 public abstract class Competidor {
@@ -118,12 +117,9 @@ public abstract class Competidor {
         }
     }
 
-    public int esGanador(Competidor competidor, Caracteristica caracteristica, boolean imprimirPorPantalla)
-            throws CaracteristicaInexistenteException, ExceptionMiembroInlcuidoEnLiga { // FUNCION ENVOLTORIO
-        if(this.esLiga && ((Liga)this).contieneA(competidor))
-            throw new ExceptionMiembroInlcuidoEnLiga("La liga " + this.nombre + " contiene a " + competidor.getNombre() +". No pueden competir");
-        
-            int contador = 0;
+    public int esGanador(Competidor competidor, Caracteristica caracteristica, boolean imprimirPorPantalla) throws CaracteristicaInexistenteException{
+    
+        int contador = 0;
         return venceA(competidor, caracteristica, contador, imprimirPorPantalla);
     }
 

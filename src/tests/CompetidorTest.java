@@ -60,7 +60,7 @@ public class CompetidorTest {
 
         try {
             assertEquals(2, liga1.esGanador(liga2, Caracteristica.VELOCIDAD, false));
-        } catch (CaracteristicaInexistenteException | ExceptionMiembroInlcuidoEnLiga e) {
+        } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
         }
     }
@@ -83,7 +83,7 @@ public class CompetidorTest {
 
         try {
             assertEquals(2, liga1.esGanador(liga2, Caracteristica.VELOCIDAD, false));
-        } catch (CaracteristicaInexistenteException | ExceptionMiembroInlcuidoEnLiga e) {
+        } catch (CaracteristicaInexistenteException  e) {
             e.printStackTrace();
         }
     }
@@ -102,7 +102,7 @@ public class CompetidorTest {
 
         try {
             assertEquals(1, p.esGanador(liga1, Caracteristica.VELOCIDAD, false));
-        } catch (CaracteristicaInexistenteException | ExceptionMiembroInlcuidoEnLiga e) {
+        } catch (CaracteristicaInexistenteException  e) {
             e.printStackTrace();
         }
     }
@@ -224,7 +224,7 @@ public class CompetidorTest {
             Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
             Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
             assertEquals(2, p1.esGanador(p2, Caracteristica.VELOCIDAD, false));
-        } catch (CaracteristicaInexistenteException | ExceptionMiembroInlcuidoEnLiga e) {
+        } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
         }
     }
@@ -237,8 +237,6 @@ public class CompetidorTest {
             assertEquals(2, p1.esGanador(p2, Caracteristica.FUERZA, false));
         } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
-        } catch (ExceptionMiembroInlcuidoEnLiga e) {
-            e.printStackTrace();
         }
     }
 
@@ -248,7 +246,7 @@ public class CompetidorTest {
             Competidor p1 = new Villano("Victor Fries", "Mr. Freeze", 320, 280, 350, 300);
             Competidor p2 = new Villano("Selina Kyle", "Catwoman", 280, 300, 250, 350);
             assertEquals(1, p1.esGanador(p2, Caracteristica.RESISTENCIA, false));
-        } catch (CaracteristicaInexistenteException | ExceptionMiembroInlcuidoEnLiga e) {
+        } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
         }
     }
@@ -261,8 +259,6 @@ public class CompetidorTest {
             assertEquals(1, p1.esGanador(p2, Caracteristica.DESTREZA, false));
         } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
-        } catch (ExceptionMiembroInlcuidoEnLiga e) {
-            e.printStackTrace();
         }
     }
 
@@ -271,16 +267,10 @@ public class CompetidorTest {
         try {
             Competidor p1 = new Heroe("Lucas Diaz", "Pepe patea traseros", 300, 250, 100, 500);
             Competidor p2 = new Villano("Alejandro Perez", "Pana Rabbit", 300, 250, 100, 500);
-            try {
-                assertEquals(0, p1.esGanador(p2, Caracteristica.VELOCIDAD, false));
-            } catch (ExceptionMiembroInlcuidoEnLiga e) {
-                e.printStackTrace();
-            }
-            try {
-                assertEquals(0, p2.esGanador(p1, Caracteristica.VELOCIDAD, false));
-            } catch (ExceptionMiembroInlcuidoEnLiga e) {
-                e.printStackTrace();
-            }
+            
+            assertEquals(0, p1.esGanador(p2, Caracteristica.VELOCIDAD, false));
+           
+            assertEquals(0, p2.esGanador(p1, Caracteristica.VELOCIDAD, false));
         } catch (CaracteristicaInexistenteException e) {
             e.printStackTrace();
         }
