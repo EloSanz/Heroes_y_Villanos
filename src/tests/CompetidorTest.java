@@ -108,7 +108,7 @@ public class CompetidorTest {
     }
 
     @Test
-    public void testPersonajeIncluidoXLiga() throws ExceptionMiembroInlcuidoEnLiga {
+    public void testPersonajeIncluidoXLiga()  {
 
         Liga liga1 = new Liga("Liga 1");
 
