@@ -1,0 +1,39 @@
+Héroe          : 	Iron Man             Tony Stark            	      400,0	      400,0	      350,0	      400,0
+Héroe          : 	Superman             Clark Kent            	      500,0	      300,0	      160,0	      210,0
+Héroe          : 	Storm                Ororo Munroe          	      380,0	      400,0	      350,0	      420,0
+Héroe          : 	Captain America      Steve Rogers          	      300,0	      350,0	      350,0	      400,0
+Villano        : 	Carnage              Cletus Kasady         	      420,0	      300,0	      450,0	      380,0
+Villano        : 	Green Goblin         Norman Osborn         	      300,0	      250,0	      350,0	      300,0
+Villano        : 	Vulture              Adrian Toomes         	      350,0	      200,0	      300,0	      250,0
+Villano        : 	Doctor Octopus       Otto Octavius         	      200,0	      400,0	      300,0	      400,0
+Héroe          : 	Rogue                Anna Marie            	      370,0	      380,0	      400,0	      350,0
+Héroe          : 	Hulk                 Bruce Banner          	      200,0	     1000,0	      200,0	      800,0
+Héroe          : 	Thor                 Thor Odinson          	      400,0	      500,0	      350,0	      500,0
+Villano        : 	Catwoman             Selina Kyle           	      280,0	      300,0	      350,0	      250,0
+Héroe          : 	Shazam               Billy Batson          	      500,0	      240,0	      200,0	      230,0
+Héroe          : 	oms                  Omar                  	      370,0	      380,0	      400,0	      350,0
+Héroe          : 	Wonder Woman         Diana Prince          	      380,0	      400,0	      350,0	      450,0
+Héroe          : 	Black Panther        T'Challa              	      350,0	      400,0	      400,0	      400,0
+Villano        : 	Mr. Freeze           Victor Fries          	      320,0	      280,0	      300,0	      350,0
+Héroe          : 	Aquaman              Arthur Curry          	      350,0	      380,0	      300,0	      400,0
+Héroe          : 	Phoenix              Jean Grey             	      420,0	      400,0	      380,0	      450,0
+Villano        : 	Mysterio             Quentin Beck          	      300,0	      200,0	      350,0	      250,0
+Héroe          : 	Black Widow          Natasha Romanoff      	      350,0	      250,0	      400,0	      300,0
+Héroe          : 	Flash                Barry Allen           	      999,0	      250,0	      400,0	      240,0
+Villano        : 	Sandman              Flint Marko           	      250,0	      300,0	      250,0	      350,0
+Villano        : 	Rhino                Aleksei Sytsevich     	      200,0	      450,0	      200,0	      500,0
+Villano        : 	Kingpin              Wilson Fisk           	      350,0	      380,0	      320,0	      400,0
+Héroe          : 	Hawkeye              Clint Barton          	      300,0	      250,0	      400,0	      300,0
+Villano        : 	Goddess of Death     Hela                  	      400,0	      450,0	      380,0	      500,0
+Héroe          : 	Batgirl              Barbara Gordon        	      300,0	      300,0	      450,0	      250,0
+Héroe          : 	Batman               Bruce Wayne           	      350,0	      250,0	      350,0	      300,0
+Héroe          : 	elo                  Eliseo                	      370,0	      380,0	      401,0	      350,0
+Villano        : 	El Guasón            Arthur Fleck          	      200,0	      210,0	      205,0	      220,0
+Villano        : 	Kraven the Hunter    Sergei Kravinoff      	      400,0	      350,0	      400,0	      400,0
+Héroe          : 	SuperFede            Fede                  	      100,0	      100,0	      100,0	      100,0
+Héroe          : 	Spider-Man           Peter Parker          	      350,0	      300,0	      550,0	      300,0
+Héroe          : 	Cyclops              Scott Summers         	      350,0	      380,0	      420,0	      400,0
+Héroe          : 	Wolverine            Logan                 	      400,0	      350,0	      420,0	      380,0
+Villano        : 	Venom                Eddie Brock           	      380,0	      320,0	      400,0	      350,0
+Villano        : 	El Pingüino          Oswald Cobblepot      	      280,0	      250,0	      200,0	      300,0
+Villano        : 	Electro              Max Dillon            	      400,0	      300,0	      300,0	      300,0

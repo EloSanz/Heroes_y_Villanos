@@ -132,8 +132,6 @@ public class CompetidorTest {
         }
     }
 
-
-
     @Test
     public void testEstaPresenteEnLiga() {
         Competidor p = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);

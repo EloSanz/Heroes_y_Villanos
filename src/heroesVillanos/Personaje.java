@@ -38,19 +38,4 @@ public abstract class Personaje extends Competidor {
     public double getCaracteristica(Caracteristica caracteristica) {
         return caracteristicas.get(caracteristica);
     }
-
-    // COMPARADORES
-    // @Override
-    // public int compareTo(Personaje obj)
-    // {
-    // return (int) (this.getFuerza() - obj.getFuerza());
-    // }
-    // public static final Comparator<Personaje> VELOCIDAD =
-    // Comparator.comparingDouble(Personaje::getVelocidad);
-    // public static final Comparator<Personaje> FUERZA =
-    // Comparator.comparingDouble(Personaje::getFuerza);
-    // public static final Comparator<Personaje> RESISTENCIA =
-    // Comparator.comparingDouble(Personaje::getResistencia);
-    // public static final Comparator<Personaje> DESTREZA =
-    // Comparator.comparingDouble(Personaje::getDestreza);
 }
