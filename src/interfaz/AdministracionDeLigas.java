@@ -1,4 +1,5 @@
 package interfaz;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -71,6 +72,7 @@ public class AdministracionDeLigas {
         competidores.put(nombreLiga, liga); // Agregar la liga al mapa usando su nombre como clave
         System.out.println("Liga creada exitosamente.");
     }
+
     private static void agregarMiembrosALiga(Scanner scanner, Map<String, Competidor> competidores, Liga liga) {
         String nombreBuscado;
         List<String> miembrosCargados = new ArrayList<>(); // Lista para rastrear los miembros ya cargados
@@ -82,7 +84,8 @@ public class AdministracionDeLigas {
                 if (competidor.getEsLiga()) {
                     Liga subliga = (Liga) competidor;
                     if (liga.contieneA(subliga)) {
-                        System.out.println("La subliga " + subliga.getNombre() + " ya está presente en la liga principal.");
+                        System.out.println(
+                                "La subliga " + subliga.getNombre() + " ya está presente en la liga principal.");
                     } else {
                         liga.agregarMiembro(subliga);
                         for (Competidor miembro : subliga.getCompetidores().values()) {
@@ -92,12 +95,13 @@ public class AdministracionDeLigas {
                             }
                         }
                     }
-                } else {//es personaje
+                } else {// es personaje
                     if (!miembrosCargados.contains(competidor.getNombre()) && !liga.contieneA(competidor)) {
                         liga.agregarMiembro(competidor);
                         miembrosCargados.add(competidor.getNombre());
                     } else {
-                        System.out.println("El competidor " + competidor.getNombre() + " ya está presente en la liga principal.");
+                        System.out.println(
+                                "El competidor " + competidor.getNombre() + " ya está presente en la liga principal.");
                     }
                 }
             } else if (!nombreBuscado.equals("fin")) {
@@ -106,5 +110,4 @@ public class AdministracionDeLigas {
         } while (!nombreBuscado.equals("fin"));
     }
 
-    
 }

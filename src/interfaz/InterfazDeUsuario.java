@@ -18,19 +18,19 @@ public class InterfazDeUsuario {
 
         CompetidoresSingleton competidoresSingleton = CompetidoresSingleton.getInstance();
         Map<String, Competidor> competidores = competidoresSingleton.getCompetidores();
- 
+
         /*
-        Archivo archivo = new Archivo("personajes.in");
-        archivo.cargarPersonajes(competidores);
-        archivo.cargarLigas("ligas.in", competidores);
-        */
-        
+         * Archivo archivo = new Archivo("personajes.in");
+         * archivo.cargarPersonajes(competidores);
+         * archivo.cargarLigas("ligas.in", competidores);
+         */
+
         System.out.println("Heroes y Villanos: El Videojuego.\n--------------------------------");
         String mensaje = "1) Administracion de Personajes.\n" +
-                        "2) Administracion de Ligas.\n" +
-                        "3) Realizacion de Combates.\n" +
-                        "4) Reportes.\n" +
-                        "5) Salir.";
+                "2) Administracion de Ligas.\n" +
+                "3) Realizacion de Combates.\n" +
+                "4) Reportes.\n" +
+                "5) Salir.";
         Scanner sc = new Scanner(System.in);
         int opcion = InterfazDeUsuario.obtenerOpcion(mensaje, 1, 5, sc);
 

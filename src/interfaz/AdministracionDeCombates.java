@@ -47,40 +47,41 @@ public class AdministracionDeCombates {
         do {
             personaje2 = getPersonaje(scanner, competidores, 2);
             if (personaje1 == personaje2) {
-                System.out.println("No se puede combatir contra si mismo. Ingrese otro personaje...\nPulse para avanzar");
+                System.out
+                        .println("No se puede combatir contra si mismo. Ingrese otro personaje...\nPulse para avanzar");
 
             }
         } while (personaje1 == personaje2);
 
         int op = InterfazDeUsuario.obtenerOpcion("Ingrese categoría a competir:\n" +
-                                                "Velocidad: 1\n" +
-                                                "Fuerza: 2\n" +
-                                                "Destreza: 3\n" +
-                                                "Resistencia: 4\n", 1, 4, scanner);
+                "Velocidad: 1\n" +
+                "Fuerza: 2\n" +
+                "Destreza: 3\n" +
+                "Resistencia: 4\n", 1, 4, scanner);
         System.out.println(
-            "Heroe/Villano\t\tNombre Personaje     Nombre Real                      Velocidad       Fuerza          Destreza        Resistencia");
+                "Heroe/Villano\t\tNombre Personaje     Nombre Real                      Velocidad       Fuerza          Destreza        Resistencia");
         System.out.println(personaje1 + "\n\t\t\t********contra********\n" + personaje2);
         try {
             switch (op) {
                 case 1:
-                    if(personaje1.esGanador(personaje2, Caracteristica.VELOCIDAD, true) == 0) {
+                    if (personaje1.esGanador(personaje2, Caracteristica.VELOCIDAD, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 2:
-                    if(personaje1.esGanador(personaje2, Caracteristica.FUERZA, true) == 0) {
+                    if (personaje1.esGanador(personaje2, Caracteristica.FUERZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 3:
-                    if(personaje1.esGanador(personaje2, Caracteristica.DESTREZA, true) == 0) {
+                    if (personaje1.esGanador(personaje2, Caracteristica.DESTREZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 4:
-                    if(personaje1.esGanador(personaje2, Caracteristica.RESISTENCIA, true) == 0) {
+                    if (personaje1.esGanador(personaje2, Caracteristica.RESISTENCIA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
-                    }   
+                    }
                     break;
             }
         } catch (CaracteristicaInexistenteException e) {
@@ -119,37 +120,37 @@ public class AdministracionDeCombates {
         } while (liga1.contieneA(personaje1));
 
         int op = InterfazDeUsuario.obtenerOpcion("Ingrese categoría a competir:\n" +
-                                                "Velocidad: 1\n" +
-                                                "Fuerza: 2\n" +
-                                                "Destreza: 3\n" +
-                                                "Resistencia: 4\n", 1, 4, scanner);
+                "Velocidad: 1\n" +
+                "Fuerza: 2\n" +
+                "Destreza: 3\n" +
+                "Resistencia: 4\n", 1, 4, scanner);
 
         System.out.println(
-            "Heroe/Villano\t\tNombre Personaje     Nombre Real                      Velocidad       Fuerza          Destreza        Resistencia");
+                "Heroe/Villano\t\tNombre Personaje     Nombre Real                      Velocidad       Fuerza          Destreza        Resistencia");
         InterfazDeUsuario.mostrarCompetidor(liga1);
         System.out.println("\t********contra********\n" + personaje1);
 
         try {
             switch (op) {
                 case 1:
-                    if(personaje1.esGanador(liga1, Caracteristica.VELOCIDAD, true) == 0) {
+                    if (personaje1.esGanador(liga1, Caracteristica.VELOCIDAD, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 2:
-                    if(personaje1.esGanador(liga1, Caracteristica.FUERZA, true) == 0) {
+                    if (personaje1.esGanador(liga1, Caracteristica.FUERZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 3:
-                    if(personaje1.esGanador(liga1, Caracteristica.DESTREZA, true) == 0) {
+                    if (personaje1.esGanador(liga1, Caracteristica.DESTREZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 4:
-                    if(personaje1.esGanador(liga1, Caracteristica.RESISTENCIA, true) == 0) {
+                    if (personaje1.esGanador(liga1, Caracteristica.RESISTENCIA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
-                    }   
+                    }
                     break;
             }
         } catch (CaracteristicaInexistenteException e) {
@@ -179,50 +180,49 @@ public class AdministracionDeCombates {
 
         liga1 = getLiga(scanner, competidores, 1);
         System.out.println(liga1.getNombre() + " Seleccionada. Pulse para avanzar");
-        do
-        {
-            liga2 = getLiga(scanner, competidores, 2);   
-            if(liga1 == liga2)
-            {
+        do {
+            liga2 = getLiga(scanner, competidores, 2);
+            if (liga1 == liga2) {
                 System.out.println("No puede competir una liga contra si misma.\nPulse para avanzar");
-            }else if(liga1.contieneA(liga2))
-            {
-                System.out.println(liga1.getNombre() + " contiene a " + liga2.getNombre() + " No pueden competir.\nPulse para avanzar");
+            } else if (liga1.contieneA(liga2)) {
+                System.out.println(liga1.getNombre() + " contiene a " + liga2.getNombre()
+                        + " No pueden competir.\nPulse para avanzar");
             }
-        }while(liga1 == liga2 || liga1.contieneA(liga2) || liga2.contieneA(liga1));
+        } while (liga1 == liga2 || liga1.contieneA(liga2) || liga2.contieneA(liga1));
 
         System.out.println(liga2.getNombre() + " Seleccionada. Pulse para avanzar");
 
         int op = InterfazDeUsuario.obtenerOpcion("Ingrese categoría a competir:\n" +
-                                                "Velocidad: 1\n" +
-                                                "Fuerza: 2\n" +
-                                                "Destreza: 3\n" +
-                                                "Resistencia: 4\n", 1, 4, scanner);
+                "Velocidad: 1\n" +
+                "Fuerza: 2\n" +
+                "Destreza: 3\n" +
+                "Resistencia: 4\n", 1, 4, scanner);
 
-        //System.out.println("Heroe/Villano\t\tNombre Personaje     Nombre Real                      Velocidad       Fuerza          Destreza        Resistencia");
+        // System.out.println("Heroe/Villano\t\tNombre Personaje Nombre Real Velocidad
+        // Fuerza Destreza Resistencia");
         System.out.println(liga1 + "\n\t\t\t********contra********\n" + liga2);
 
         try {
             switch (op) {
                 case 1:
-                    if(liga1.esGanador(liga2, Caracteristica.VELOCIDAD, true) == 0) {
+                    if (liga1.esGanador(liga2, Caracteristica.VELOCIDAD, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 2:
-                    if(liga1.esGanador(liga2, Caracteristica.FUERZA, true) == 0) {
+                    if (liga1.esGanador(liga2, Caracteristica.FUERZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 3:
-                    if(liga1.esGanador(liga2, Caracteristica.DESTREZA, true) == 0) {
+                    if (liga1.esGanador(liga2, Caracteristica.DESTREZA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
                     }
                     break;
                 case 4:
-                    if(liga1.esGanador(liga2, Caracteristica.RESISTENCIA, true) == 0) {
+                    if (liga1.esGanador(liga2, Caracteristica.RESISTENCIA, true) == 0) {
                         System.out.println("Los competidores EMPATAN TOTALMENTE.");
-                    }   
+                    }
                     break;
             }
         } catch (CaracteristicaInexistenteException e) {

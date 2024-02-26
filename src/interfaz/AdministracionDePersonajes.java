@@ -63,7 +63,8 @@ public class AdministracionDePersonajes {
         }
     }
 
-    public static void crearPersonaje(Scanner scanner, Map<String, Competidor> competidores) throws PersonajeExistenteException {
+    public static void crearPersonaje(Scanner scanner, Map<String, Competidor> competidores)
+            throws PersonajeExistenteException {
         int tipo = 0;
         System.out.println("Creación de Personaje");
         do {
@@ -76,7 +77,7 @@ public class AdministracionDePersonajes {
 
         System.out.print("Nombre del Personaje: ");
         String nombrePersonaje = scanner.nextLine();
-        if(competidores.get(nombrePersonaje) != null) {
+        if (competidores.get(nombrePersonaje) != null) {
             throw new PersonajeExistenteException("El personaje ya existe.");
         }
 
@@ -93,9 +94,11 @@ public class AdministracionDePersonajes {
         int resistencia = validarEntero(scanner);
 
         if (tipo == 1) {
-            competidores.put(nombrePersonaje, new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
+            competidores.put(nombrePersonaje,
+                    new Heroe(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
         } else if (tipo == 2) {
-            competidores.put(nombrePersonaje, new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
+            competidores.put(nombrePersonaje,
+                    new Villano(nombreReal, nombrePersonaje, velocidad, fuerza, destreza, resistencia));
         }
     }
 

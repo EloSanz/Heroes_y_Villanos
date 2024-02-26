@@ -49,7 +49,8 @@ public class Archivo {
                         // errores)
                         continue;
                     }
-                    competidores.put(nombrePersonaje, competidor); // Agregar el competidor al HashMap usando el nombre como clave
+                    competidores.put(nombrePersonaje, competidor); // Agregar el competidor al HashMap usando el nombre
+                                                                   // como clave
                 } // no hay else ya que no se requiere validacion en los datos
             }
         } catch (IOException e) {

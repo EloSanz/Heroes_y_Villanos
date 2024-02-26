@@ -94,7 +94,7 @@ public class CompetidorTest {
             e.printStackTrace();
         }
     }
-    
+
     @Test
     public void testEstaPresenteEnLiga() {
         Competidor p = new Heroe("Tony Stark", "Iron Man", 400, 400, 400, 350);
@@ -134,9 +134,9 @@ public class CompetidorTest {
         Liga liga2 = new Liga("Subliga");
 
         Competidor p3 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
-        
+
         liga2.agregarMiembro(p3);
-        
+
         liga1.agregarMiembro(liga2);
 
         assertFalse(liga1.esHomogenea());
@@ -146,9 +146,11 @@ public class CompetidorTest {
     public void testCaracteristicaInexistente() {
         Competidor p1 = new Villano("Arthur Fleck", "El Guasón", 200, 210, 220, 205);
         Competidor p2 = new Heroe("Barry Allen", "Flash", 500, 250, 240, 400);
-        assertThrows(CaracteristicaInexistenteException.class, () -> {p1.esGanador(p2, Caracteristica.OTRA, false);});
+        assertThrows(CaracteristicaInexistenteException.class, () -> {
+            p1.esGanador(p2, Caracteristica.OTRA, false);
+        });
     }
-    
+
     @Test
     public void esGanadorTestVelocidad() {
         try {
