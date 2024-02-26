@@ -33,18 +33,21 @@ public abstract class Competidor {
                     if (this.getCaracteristica(Caracteristica.VELOCIDAD) == competidor
                             .getCaracteristica(Caracteristica.VELOCIDAD)) {
                         if (imprimirPorPantalla)
-                            System.out.println("Los competidores EMPATAN en VELOCIDAD");
+                            System.out.println("Los competidores EMPATAN en VELOCIDAD (" + this.getCaracteristica(Caracteristica.VELOCIDAD) +")" );
                         return venceA(competidor, Caracteristica.FUERZA, contador + 1, imprimirPorPantalla);
                     } else if (this.getCaracteristica(Caracteristica.VELOCIDAD) > competidor
                             .getCaracteristica(Caracteristica.VELOCIDAD)) {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + this.getNombre() + " GANA en VELOCIDAD a "
-                                    + competidor.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en VELOCIDAD a %s (%s)",
+                        this.getNombre(), this.getCaracteristica(Caracteristica.VELOCIDAD),
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.VELOCIDAD)));
+
                         return 1;
                     } else {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + competidor.getNombre() + " GANA en VELOCIDAD a "
-                                    + this.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en VELOCIDAD a %s (%s)",
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.VELOCIDAD),
+                        this.getNombre(), this.getCaracteristica(Caracteristica.VELOCIDAD)));
                         return 2;
                     }
                 case FUERZA:
@@ -56,13 +59,15 @@ public abstract class Competidor {
                     } else if (this.getCaracteristica(Caracteristica.FUERZA) > competidor
                             .getCaracteristica(Caracteristica.FUERZA)) {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + this.getNombre() + " GANA en FUERZA a "
-                                    + competidor.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en FUERZA a %s (%s)",
+                        this.getNombre(), this.getCaracteristica(Caracteristica.FUERZA),
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.FUERZA)));
                         return 1;
                     } else {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + competidor.getNombre() + " GANA en FUERZA a "
-                                    + this.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en FUERZA a %s (%s)",
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.FUERZA),
+                        this.getNombre(), this.getCaracteristica(Caracteristica.FUERZA)));
                         return 2;
                     }
                 case RESISTENCIA:
@@ -74,13 +79,15 @@ public abstract class Competidor {
                     } else if (this.getCaracteristica(Caracteristica.RESISTENCIA) > competidor
                             .getCaracteristica(Caracteristica.RESISTENCIA)) {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + this.getNombre() + " GANA en RESISTENCIA a "
-                                    + competidor.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en RESISTENCIA a %s (%s)",
+                        this.getNombre(), this.getCaracteristica(Caracteristica.RESISTENCIA),
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.RESISTENCIA)));
                         return 1;
                     } else {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + competidor.getNombre() + " GANA en RESISTENCIA a "
-                                    + this.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en RESISTENCIA a %s (%s)",
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.RESISTENCIA),
+                        this.getNombre(), this.getCaracteristica(Caracteristica.RESISTENCIA)));
                         return 2;
                     }
                 case DESTREZA:
@@ -92,13 +99,15 @@ public abstract class Competidor {
                     } else if (this.getCaracteristica(Caracteristica.DESTREZA) > competidor
                             .getCaracteristica(Caracteristica.DESTREZA)) {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + this.getNombre() + " GANA en DESTREZA a "
-                                    + competidor.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en DESTREZA a %s (%s)",
+                        this.getNombre(), this.getCaracteristica(Caracteristica.DESTREZA),
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.DESTREZA)));
                         return 1;
                     } else {
                         if (imprimirPorPantalla)
-                            System.out.println("El competidor " + competidor.getNombre() + " GANA en DESTREZA a "
-                                    + this.getNombre());
+                        System.out.println(String.format("El competidor %s (%s) GANA en DESTREZA a %s (%s)",
+                        competidor.getNombre(), competidor.getCaracteristica(Caracteristica.DESTREZA),
+                        this.getNombre(), this.getCaracteristica(Caracteristica.DESTREZA)));
                         return 2;
                     }
                 default:
