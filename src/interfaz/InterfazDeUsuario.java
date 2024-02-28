@@ -48,7 +48,7 @@ public class InterfazDeUsuario {
                     Reportes.reportes(competidores);
                 break;
             case 5:
-                System.out.println("Gracias por jugar.");
+                System.out.println("Gracias por jugar Teo.");
                 System.exit(0);
                 break;
         }
